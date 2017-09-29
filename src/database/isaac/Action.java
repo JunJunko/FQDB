@@ -20,7 +20,7 @@ public class Action extends UsefulMethod{
 		int salary = Integer.parseInt(strs[5]);
 		user.getAll(id, strs[2], age, strs[4], salary);
 		writeFile.write(user.toString(), true);
-		sortData();
+		sortData(strs);
 		
 		feedBack("ADD");
 		return 0;						
@@ -32,7 +32,7 @@ public class Action extends UsefulMethod{
 		String[] ramStrs = new String[100];		//size100
 		int resultDelete;
 		String[] tempDelete;
-		ramStrs = queryFile.showAll();
+		ramStrs = queryFile.showAll(strs);
 		if(isId) {
 			int j = 0;
 			while(true) {
@@ -88,7 +88,7 @@ public class Action extends UsefulMethod{
 		String[] ramStrs = new String[100];		//size100
 		int resultUpdate;
 		String[] tempUpdate;
-		ramStrs = queryFile.showAll();
+		ramStrs = queryFile.showAll(strs);
 		if(isId) {
 			int j = 0;
 			while(true) {
@@ -161,10 +161,10 @@ public class Action extends UsefulMethod{
 		}
 	}
 	
-	public int actShow() {
+	public int actShow(String[] strs) {
 		queryFile = new QueryFile();
 		ui = new UserInterface();
-		String[] showStrs = queryFile.showAll();
+		String[] showStrs = queryFile.showAll(strs);
 		if(showStrs == null) {
 			return -1;
 		}

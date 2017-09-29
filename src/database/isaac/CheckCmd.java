@@ -43,11 +43,11 @@ public class CheckCmd extends UsefulMethod{
 			checkQuery(strs);
 			break;
 		case "SHOW":
-			if(strs.length != 1) {
+			if(strs.length != 2) {
 				ui.displayHelpShow();
 				return 0;
 			}
-			checkShow();
+			checkShow(strs);
 			break;
 		case "QUIT":
 			if(strs.length != 1) {
@@ -172,8 +172,8 @@ public class CheckCmd extends UsefulMethod{
 		return 0;
 	}
 
-	private int checkShow() {
-		if(action.actShow() == -1) {
+	private int checkShow(String[] strs) {
+		if(action.actShow(strs) == -1) {
 			ui.displayQueryFail();
 			ui.displayHelpShow();
 		}

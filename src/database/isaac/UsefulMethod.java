@@ -37,12 +37,12 @@ public class UsefulMethod {
 		return repeatReturn;
 	}
 
-	protected void sortData() {
+	protected void sortData(String[] strs) {
 		writeFile = new WriteFile();
 		queryFile = new QueryFile();
 		int[] dataNum = new int[100];
 		String[] tempStrs;
-		String[] dataStrs = queryFile.showAll();
+		String[] dataStrs = queryFile.showAll(strs);
 		for(int j = 0; j == 0 || dataStrs[j] != null; j++) {
 //			System.out.println(dataStrs[j]);
 			tempStrs = dataStrs[j].split(" ");

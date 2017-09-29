@@ -5,11 +5,11 @@ import java.io.*;
 public class QueryFile extends UsefulMethod{
 	private FileReader fileReader = null;
 	private BufferedReader bufferedReader = null;
-	public String[] showAll() {							//SHOW command
+	public String[] showAll(String[] strs2) {							//SHOW command
 		int resultCount = 0;
 		String[] strs = new String[100];		//size: 100 members
 		try {
-			fileReader = new FileReader("./resources/Data.txt");
+			fileReader = new FileReader("./resources/"+strs2[1]);
 			bufferedReader = new BufferedReader(fileReader);	// /home/hadoop/eclipse-workspace/MyDatabase
 														
 			String tempStr;

@@ -39,8 +39,8 @@ public class Client {
              });  
   
             ChannelFuture future = b.connect(HOST, PORT).sync();  
-            future.channel().writeAndFlush("SHOW");  
-            future.channel().writeAndFlush("QUERY id > 5");  
+            future.channel().writeAndFlush("SHOW Test.txt");  
+//            future.channel().writeAndFlush("QUERY id > 5");  
             future.channel().closeFuture().sync();  
         } finally {  
             group.shutdownGracefully();  
